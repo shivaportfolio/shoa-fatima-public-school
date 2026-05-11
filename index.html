@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoa Fatima Public School</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green-deep: #0a3d2e;
+    --green-mid: #1a6648;
+    --green-accent: #2d9e6b;
+    --green-light: #a8dcc4;
+    --gold: #c9a227;
+    --gold-light: #f0d878;
+    --cream: #faf8f2;
+    --cream-dark: #f0ece0;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-mid: #3d3d3d;
+    --text-light: #717171;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--green-deep);
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 70px;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+  }
+
+  .logo-circle {
+    width: 46px; height: 46px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: 20px;
+    color: var(--green-deep);
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 600;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .logo-text span { color: var(--gold-light); font-size: 11px; font-weight: 300; display: block; font-family: 'DM Sans', sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--green-deep);
+    padding: 9px 22px;
+    border-radius: 4px;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--green-deep);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 5% 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 600px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 50%, rgba(45,158,107,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,162,39,0.10) 0%, transparent 60%);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+    background-size: 30px 30px;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid rgba(201,162,39,0.4);
+    color: var(--gold-light);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em { color: var(--gold-light); font-style: normal; }
+
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--green-deep);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.9);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-size: 15px; font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  /* Hero visual card */
+  .hero-visual { position: relative; z-index: 1; }
+
+  .info-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 36px;
+    backdrop-filter: blur(4px);
+  }
+
+  .info-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 20px; margin-bottom: 24px;
+  }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .stat-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px; padding: 20px 16px; text-align: center;
+  }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--gold); }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 90px 5%; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--green-accent);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 16px; color: var(--text-light);
+    line-height: 1.7; max-width: 560px;
+  }
+
+  /* ── ANNOUNCEMENTS TICKER ── */
+  .ticker-bar {
+    background: var(--gold);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+  }
+  .ticker-inner {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+    font-size: 13px; font-weight: 600;
+    color: var(--green-deep);
+  }
+  @keyframes ticker {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+  .ticker-sep { margin: 0 40px; opacity: 0.5; }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img-main {
+    background: var(--green-deep);
+    border-radius: 16px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .about-img-main svg { opacity: 0.18; }
+
+  .about-img-overlay {
+    position: absolute;
+    bottom: -30px; right: -30px;
+    background: var(--gold);
+    border-radius: 12px;
+    padding: 24px 28px;
+    color: var(--green-deep);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .about-img-overlay .big { font-size: 36px; font-weight: 900; }
+  .about-img-overlay .small { font-size: 13px; font-weight: 600; }
+
+  .values-list { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+  .value-item { display: flex; gap: 14px; align-items: flex-start; }
+  .value-icon {
+    width: 36px; height: 36px;
+    background: rgba(45,158,107,0.12);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .value-item h4 { font-size: 15px; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+  .value-item p { font-size: 13px; color: var(--text-light); line-height: 1.5; }
+
+  /* ── PROGRAMS ── */
+  .programs { background: var(--green-deep); }
+  .programs .section-label { color: var(--gold-light); }
+  .programs .section-title { color: var(--white); }
+  .programs .section-subtitle { color: rgba(255,255,255,0.6); }
+
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .prog-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 36px 28px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: default;
+  }
+
+  .prog-card:hover {
+    background: rgba(255,255,255,0.10);
+    transform: translateY(-6px);
+  }
+
+  .prog-icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .prog-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .prog-card p {
+    font-size: 14px; color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  .prog-tag {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 14px;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid rgba(201,162,39,0.3);
+    color: var(--gold-light);
+    border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+  }
+
+  /* ── FACILITIES ── */
+  .fac-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }
+
+  .fac-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .fac-item {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .fac-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(10,61,46,0.10);
+  }
+
+  .fac-thumb {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+  }
+
+  .fac-item:nth-child(1) .fac-thumb { background: #e8f5ee; }
+  .fac-item:nth-child(2) .fac-thumb { background: #fff3e0; }
+  .fac-item:nth-child(3) .fac-thumb { background: #e3f2fd; }
+  .fac-item:nth-child(4) .fac-thumb { background: #fce4ec; }
+  .fac-item:nth-child(5) .fac-thumb { background: #f3e5f5; }
+  .fac-item:nth-child(6) .fac-thumb { background: #e0f7fa; }
+  .fac-item:nth-child(7) .fac-thumb { background: #fff8e1; }
+  .fac-item:nth-child(8) .fac-thumb { background: #e8eaf6; }
+
+  .fac-body { padding: 16px; }
+  .fac-body h4 { font-size: 15px; font-weight: 600; color: var(--green-deep); margin-bottom: 5px; }
+  .fac-body p { font-size: 13px; color: var(--text-light); line-height: 1.4; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--cream-dark); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .testi-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .testi-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--green-light);
+    line-height: 0.5;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .testi-text {
+    font-size: 15px; color: var(--text-mid);
+    line-height: 1.7; margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .testi-author { display: flex; gap: 12px; align-items: center; }
+  .testi-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--green-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 700; color: var(--white);
+    flex-shrink: 0;
+  }
+  .testi-name { font-size: 14px; font-weight: 600; color: var(--green-deep); }
+  .testi-role { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+  /* ── EVENTS ── */
+  .events-list { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+
+  .event-row {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 22px 28px;
+    display: flex; align-items: center; gap: 28px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+  }
+  .event-row:hover { box-shadow: 0 8px 24px rgba(10,61,46,0.08); }
+
+  .event-date {
+    background: var(--green-deep);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 64px;
+  }
+  .event-date .day { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; line-height: 1; }
+  .event-date .mon { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.7; margin-top: 4px; }
+
+  .event-info h4 { font-size: 16px; font-weight: 600; color: var(--green-deep); margin-bottom: 5px; }
+  .event-info p { font-size: 13px; color: var(--text-light); }
+
+  .event-tag {
+    margin-left: auto; flex-shrink: 0;
+    background: rgba(45,158,107,0.1);
+    color: var(--green-mid);
+    padding: 5px 14px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+  }
+
+  /* ── NOTICE BOARD ── */
+  .notice { background: var(--green-deep); }
+  .notice .section-title { color: var(--white); }
+  .notice .section-label { color: var(--gold-light); }
+
+  .notice-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    margin-top: 48px;
+    align-items: start;
+  }
+
+  .notice-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .notice-item {
+    background: rgba(255,255,255,0.06);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .notice-item h4 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .notice-item p { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  .contact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .contact-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light); font-size: 22px; margin-bottom: 24px;
+  }
+
+  .contact-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+  .contact-icon { font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+  .contact-row div { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+  .contact-row strong { color: var(--white); font-weight: 600; display: block; font-size: 14px; margin-bottom: 2px; }
+
+  /* ── ADMISSION CTA ── */
+  .admission-cta {
+    background: var(--gold);
+    text-align: center;
+    padding: 80px 5%;
+  }
+
+  .admission-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 900;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+  }
+
+  .admission-cta p {
+    font-size: 17px; color: rgba(10,61,46,0.75);
+    margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto;
+  }
+
+  .cta-btns { display: flex; gap: 16px; justify-content: center; }
+
+  .btn-dark {
+    background: var(--green-deep);
+    color: var(--white);
+    padding: 15px 36px; border-radius: 6px;
+    font-size: 16px; font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-dark:hover { background: var(--green-mid); }
+
+  .btn-ghost-dark {
+    border: 2px solid var(--green-deep);
+    color: var(--green-deep);
+    padding: 15px 36px; border-radius: 6px;
+    font-size: 16px; font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-ghost-dark:hover { background: rgba(10,61,46,0.1); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #061f17;
+    padding: 60px 5% 30px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 14px;
+    margin-top: 12px;
+  }
+
+  .footer-brand p { font-size: 13px; line-height: 1.7; }
+
+  footer h4 { color: var(--gold-light); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; }
+
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  footer ul a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  footer ul a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px;
+  }
+
+  /* ── STAR RATING ── */
+  .stars { color: var(--gold); font-size: 14px; margin-bottom: 12px; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img-wrap { display: none; }
+    .programs-grid { grid-template-columns: 1fr; }
+    .fac-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .notice-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-circle">SF</div>
+    <div class="logo-text">
+      Shoa Fatima Public School
+      <span>Est. 2005 · Excellence in Education</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#admission" class="nav-cta">Apply Now</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    📢 Admissions Open 2025–26 for Class Nursery to Class XII &nbsp;<span class="ticker-sep">•</span>&nbsp;
+    🏆 Our students scored 98% in Board Exams 2024 &nbsp;<span class="ticker-sep">•</span>&nbsp;
+    📅 Annual Sports Day: June 5, 2025 &nbsp;<span class="ticker-sep">•</span>&nbsp;
+    🎨 Inter-School Art Competition Results Declared &nbsp;<span class="ticker-sep">•</span>&nbsp;
+    📚 Summer Reading Program Registration Now Open &nbsp;<span class="ticker-sep">•</span>&nbsp;
+    🌿 Green School Initiative Launched — Plant a Tree Drive
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✦ Lucknow's Trusted School Since 2005</div>
+    <h1>Nurturing <em>Minds,</em><br>Shaping <em>Futures</em></h1>
+    <p>At Shoa Fatima Public School, we believe every child deserves an education that ignites curiosity, builds character, and prepares them for the world ahead.</p>
+    <div class="hero-btns">
+      <a href="#admission" class="btn-primary">Begin Admission</a>
+      <a href="#about" class="btn-outline">Discover More</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="info-card">
+      <h3>Our Achievement at a Glance</h3>
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-num">2000+</div>
+          <div class="stat-label">Students</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">120+</div>
+          <div class="stat-label">Faculty</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Pass Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-pattern"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <div class="about-img-main">
+        <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="100" width="240" height="160" rx="8" fill="white"/>
+          <rect x="110" y="60" width="80" height="60" rx="4" fill="white"/>
+          <rect x="125" y="75" width="50" height="45" rx="2" fill="#0a3d2e"/>
+          <rect x="50" y="130" width="60" height="80" rx="4" fill="#0a3d2e"/>
+          <rect x="130" y="150" width="60" height="60" rx="4" fill="#0a3d2e"/>
+          <rect x="200" y="130" width="50" height="80" rx="4" fill="#0a3d2e"/>
+        </svg>
+      </div>
+      <div class="about-img-overlay">
+        <div class="big">A+</div>
+        <div class="small">CBSE Affiliation</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">About Our School</div>
+      <h2 class="section-title">A Legacy of Learning & Excellence</h2>
+      <p style="color: var(--text-mid); font-size: 16px; line-height: 1.8; margin-bottom: 12px;">
+        Shoa Fatima Public School has been a beacon of quality education in Lucknow since 2005. We are affiliated with CBSE and offer a holistic curriculum from Nursery to Class XII.
+      </p>
+      <p style="color: var(--text-light); font-size: 15px; line-height: 1.8;">
+        Our philosophy blends academic rigor with values, arts, sports, and technology — preparing students not just for examinations but for life.
+      </p>
+
+      <div class="values-list">
+        <div class="value-item">
+          <div class="value-icon">📖</div>
+          <div>
+            <h4>Academic Excellence</h4>
+            <p>Structured curriculum with expert faculty, regular assessments and personalized attention for every learner.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🌱</div>
+          <div>
+            <h4>Character Building</h4>
+            <p>Inculcating values of honesty, empathy, and responsibility through daily practice and community events.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🚀</div>
+          <div>
+            <h4>Innovation & Technology</h4>
+            <p>Smart classrooms, coding labs, and STEM programs that prepare students for the future economy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="programs">
+  <div class="section-label">Academic Programs</div>
+  <h2 class="section-title">Education for Every Stage</h2>
+  <p class="section-subtitle">Carefully designed programs aligned with CBSE standards, from early childhood to senior secondary.</p>
+
+  <div class="programs-grid">
+    <div class="prog-card">
+      <span class="prog-icon">🌟</span>
+      <h3>Pre-Primary (Nursery–KG)</h3>
+      <p>Play-based learning that develops foundational literacy, numeracy, creativity and social skills in a nurturing environment.</p>
+      <span class="prog-tag">Ages 3–5</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-icon">📐</span>
+      <h3>Primary School (I–V)</h3>
+      <p>Core subjects with activity-based learning. Special focus on reading, mathematics, environmental science and arts.</p>
+      <span class="prog-tag">Ages 6–10</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-icon">🔬</span>
+      <h3>Middle School (VI–VIII)</h3>
+      <p>Introduction to Science, Mathematics, Social Studies, and Languages. Clubs, projects and leadership opportunities.</p>
+      <span class="prog-tag">Ages 11–13</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-icon">📊</span>
+      <h3>Secondary (IX–X)</h3>
+      <p>CBSE Board preparation with concept-based teaching, lab work, and comprehensive support for Class 10 exams.</p>
+      <span class="prog-tag">Ages 14–15</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-icon">🎓</span>
+      <h3>Senior Secondary (XI–XII)</h3>
+      <p>Science, Commerce, and Humanities streams. Career counselling, entrance exam coaching, and college readiness.</p>
+      <span class="prog-tag">Ages 16–17</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-icon">🏅</span>
+      <h3>Co-Curricular Programs</h3>
+      <p>Music, Dance, Drama, Painting, NCC, Debate Club, Robotics, and inter-school competitions throughout the year.</p>
+      <span class="prog-tag">All Classes</span>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities">
+  <div class="fac-header">
+    <div>
+      <div class="section-label">Campus & Infrastructure</div>
+      <h2 class="section-title">World-Class Facilities</h2>
+    </div>
+    <p class="section-subtitle" style="max-width: 340px; text-align: right;">Spread across 5 acres with modern infrastructure designed for 21st-century learning.</p>
+  </div>
+
+  <div class="fac-grid">
+    <div class="fac-item">
+      <div class="fac-thumb">💻</div>
+      <div class="fac-body">
+        <h4>Smart Classrooms</h4>
+        <p>Interactive boards in every class, projectors and digital content</p>
+      </div>
+    </div>
+    <div class="fac-item">
+      <div class="fac-thumb">🔭</div>
+      <div class="fac-body">
+        <h4>Science Labs</h4>
+        <p>Physics, Chemistry & Biology labs fully equipped as per CBSE norms</p>
+      </div>
+    </div>
+    <div class="fac-item">
+      <div class="fac-thumb">📚</div>
+      <div class="fac-body">
+        <h4>Library</h4>
+        <p>10,000+ books, periodicals, e-library access and reading rooms</p>
+      </div>
+    </div>
+    <div class="fac-item">
+      <div class="fac-thumb">⚽</div>
+      <div class="fac-body">
+        <h4>Sports Ground</h4>
+        <p>Cricket, Football, Basketball, Kabaddi and Athletics tracks</p>
+      </div>
+    </div>
+    <div class="fac-item">
+      <div class="fac-thumb">🖥️</div>
+      <div class="fac-body">
+        <h4>Computer Lab</h4>
+        <p>80 high-speed systems, coding curriculum from Class I onwards</p>
+      </div>
+    </div>
+    <div class="fac-item">
+      <div class="fac-thumb">🎨</div>
+      <div class="fac-body">
+        <h4>Art & Craft Studio</h4>
+        <p>Dedicated space for fine arts, pottery, craft and creative expression</p>
+      </div>
+    </div>
+    <div class="fac-item">
+      <div class="fac-thumb">🏠</div>
+      <div class="fac-body">
+        <h4>Safe Transport</h4>
+        <p>GPS-fitted buses covering all major routes in Lucknow with escorts</p>
+      </div>
+    </div>
+    <div class="fac-item">
+      <div class="fac-thumb">🍱</div>
+      <div class="fac-body">
+        <h4>Cafeteria</h4>
+        <p>Hygienic canteen with nutritious meals, snacks and filtered water</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div style="text-align: center;">
+    <div class="section-label" style="justify-content: center; display: block;">Parents & Alumni</div>
+    <h2 class="section-title" style="margin: 0 auto 12px;">What Our Community Says</h2>
+    <p class="section-subtitle" style="margin: 0 auto;">Real stories from the families who trust us with their children's future.</p>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <span class="testi-quote">"</span>
+      <p class="testi-text">Shoa Fatima has transformed my daughter. The teachers genuinely care about each child's growth — academically and personally. The school has a beautiful balance of discipline and creativity.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">FA</div>
+        <div>
+          <div class="testi-name">Farida Ansari</div>
+          <div class="testi-role">Parent of Class VIII student</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <span class="testi-quote">"</span>
+      <p class="testi-text">I studied here from Class I to XII and it shaped who I am today. The values taught here, the friendships made — I credit much of my success to the foundation Shoa Fatima gave me.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AR</div>
+        <div>
+          <div class="testi-name">Aman Rizvi</div>
+          <div class="testi-role">Alumni, Batch of 2020 · IIT Kanpur</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <span class="testi-quote">"</span>
+      <p class="testi-text">The smart classrooms and science labs are incredible. My son looks forward to school every single day. The teachers use modern methods and are always available for doubt clearing.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">RK</div>
+        <div>
+          <div class="testi-name">Rahul Khan</div>
+          <div class="testi-role">Parent of twin boys, Class V</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" style="background: var(--white);">
+  <div class="fac-header">
+    <div>
+      <div class="section-label">School Calendar</div>
+      <h2 class="section-title">Upcoming Events</h2>
+    </div>
+  </div>
+
+  <div class="events-list">
+    <div class="event-row">
+      <div class="event-date">
+        <div class="day">05</div>
+        <div class="mon">June</div>
+      </div>
+      <div class="event-info">
+        <h4>Annual Sports Day 2025</h4>
+        <p>A full-day event featuring track & field, team sports, prize distribution and closing ceremony.</p>
+      </div>
+      <span class="event-tag">Sports</span>
+    </div>
+    <div class="event-row">
+      <div class="event-date">
+        <div class="day">15</div>
+        <div class="mon">June</div>
+      </div>
+      <div class="event-info">
+        <h4>Parent-Teacher Meeting (Session 2025–26)</h4>
+        <p>Discuss your child's progress and learning goals with class teachers. Appointment slots available online.</p>
+      </div>
+      <span class="event-tag">Academic</span>
+    </div>
+    <div class="event-row">
+      <div class="event-date">
+        <div class="day">22</div>
+        <div class="mon">July</div>
+      </div>
+      <div class="event-info">
+        <h4>Science & Technology Fair</h4>
+        <p>Students from Class VI–XII present innovative projects. Open to parents and guests from 10 AM – 3 PM.</p>
+      </div>
+      <span class="event-tag">STEM</span>
+    </div>
+    <div class="event-row">
+      <div class="event-date">
+        <div class="day">15</div>
+        <div class="mon">Aug</div>
+      </div>
+      <div class="event-info">
+        <h4>Independence Day Celebration</h4>
+        <p>Flag hoisting, cultural performances, patriotic speeches and prize distribution at school ground.</p>
+      </div>
+      <span class="event-tag">National</span>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE + CONTACT -->
+<section id="contact" class="notice">
+  <div class="section-label">Stay Updated</div>
+  <h2 class="section-title">Notice Board & Contact</h2>
+
+  <div class="notice-grid">
+    <div>
+      <p style="color: rgba(255,255,255,0.55); font-size: 15px; margin-bottom: 24px;">Recent circulars and important school announcements.</p>
+      <div class="notice-list">
+        <div class="notice-item">
+          <h4>Holiday Notice: Eid-ul-Adha</h4>
+          <p>School will remain closed on 7–8 June 2025. Classes resume 9 June.</p>
+        </div>
+        <div class="notice-item">
+          <h4>Fee Payment Reminder – Q1</h4>
+          <p>Last date for April–June fee payment is 25 May 2025 without penalty.</p>
+        </div>
+        <div class="notice-item">
+          <h4>Result Declared: Class X & XII Boards</h4>
+          <p>Congratulations to all students! Mark sheets available at the office from 20 May.</p>
+        </div>
+        <div class="notice-item">
+          <h4>New Admission Process Open</h4>
+          <p>Registration forms available online and at the administrative office Mon–Sat, 9AM–2PM.</p>
+        </div>
+        <div class="notice-item">
+          <h4>Workshop: Digital Safety for Students</h4>
+          <p>Mandatory session for Class VII–XI on 28 May. Parents are welcome to attend.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>Get in Touch</h3>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Address</strong>
+          Shoa Fatima Public School,<br>Sector 7, Gomti Nagar,<br>Lucknow, Uttar Pradesh – 226010
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Phone</strong>
+          +91-522-XXXXXXX<br>+91-98XXX-XXXXX (Admissions)
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <strong>Email</strong>
+          info@shoafatimapublicschool.in<br>admissions@shoafatimapublicschool.in
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Office Hours</strong>
+          Monday–Saturday: 8:00 AM – 3:00 PM<br>Sunday: Closed
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION CTA -->
+<section id="admission" class="admission-cta">
+  <h2>Join Our School Family</h2>
+  <p>Admissions for the academic year 2025–26 are now open. Give your child the gift of excellent education.</p>
+  <div class="cta-btns">
+    <a href="#contact" class="btn-dark">Apply for Admission</a>
+    <a href="#programs" class="btn-ghost-dark">View Programs</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-circle" style="background: var(--gold); width: 44px; height: 44px; font-size: 18px; color: #0a3d2e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900;">SF</div>
+      <h2>Shoa Fatima<br>Public School</h2>
+      <p>Empowering students with knowledge, values and skills for a better tomorrow. CBSE affiliated school serving Lucknow since 2005.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About the School</a></li>
+        <li><a href="#programs">Academic Programs</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#events">Events Calendar</a></li>
+        <li><a href="#admission">Admissions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Academics</h4>
+      <ul>
+        <li><a href="#programs">Pre-Primary</a></li>
+        <li><a href="#programs">Primary School</a></li>
+        <li><a href="#programs">Middle School</a></li>
+        <li><a href="#programs">Secondary</a></li>
+        <li><a href="#programs">Senior Secondary</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#">Fee Portal</a></li>
+        <li><a href="#">Parent Login</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Alumni Network</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Shoa Fatima Public School, Lucknow. All rights reserved.</span>
+    <span>CBSE Affiliation No. XXXXXXXX</span>
+  </div>
+</footer>
+
+</body>
+</html>
